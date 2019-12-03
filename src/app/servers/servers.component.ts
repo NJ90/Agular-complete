@@ -16,6 +16,7 @@ export class ServersComponent implements OnInit {
   allowNewServer = false;
   serverCreationStatus = "no server was created";
   serverName='Test Server';
+  serverCreated = false;
 
   constructor() { 
     setTimeout(() => { //same meaning with "function(){}"
@@ -26,7 +27,8 @@ export class ServersComponent implements OnInit {
   ngOnInit() {
   }
 
-  onCreateServer(){//typcally trigger에 on-붙인다
+  onCreateServer(){//typically trigger에 on-붙인다
+    this.serverCreated = true,
     this.serverCreationStatus = 'server was created Name is:' + this.serverName
   }
 

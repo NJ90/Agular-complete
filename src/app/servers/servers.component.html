@@ -41,9 +41,21 @@ Add server </button>
 <!-- 
 allowNewServer를 ts에 선언한 후 사용
 * property binding ([innerText]="allowNewServer") : change some property HTML elements, directives...
-* string diplation (<p>{{allowNewServer}}</p>) : print some text to templete, outputting data
+* string interpolation (<p>{{allowNewServer}}</p>) : print some text to templete, outputting data
 -->
 
-<p>{{serverCreationStatus}}</p>
+<!-- <p>{{serverCreationStatus}}</p> -->
+
+
+<p *ngIf="serverCreated">server was created Name is : {{ serverName }}</p>
+<p *ngIf="!serverCreated">no server was created</p>
+
+<!-- ngIf + else -->
+<!-- <p *ngIf="serverCreated; else noServer">server was created Name is : {{ serverName }}</p>
+<ng-template #noServer>
+    <p>no server was created</p>
+</ng-template> -->
+
+
 <app-server></app-server>
 <app-server></app-server>

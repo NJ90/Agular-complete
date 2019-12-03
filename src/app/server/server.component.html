@@ -1,1 +1,24 @@
-<P> {{ 'server' }} with  ID: {{ serverId }} is {{ getServerStatus() }}</P>
+<P 
+[ngStyle]="{backgroundColor : getColor()}" 
+[ngClass]="{online: serverStatus === 'online'}"> <!-- online 상태일 때에만 online class를 attach -->
+    {{ 'server' }} with  ID: {{ serverId }} is {{ getServerStatus() }}
+</P>
+<!-- server.component.ts에 method('getColor()') 선언 -->
+
+
+<!-- 
+ [ngStyle]="{key: value/method}" : [] are not part of the directive, 
+ >>[] indicate that I want to bind to some property on this directive and this property
+ (=== binding to a property of the directive / 즉, property binding 일때 동작) 
+   property binding != directive   
+
+   ngStyle:directive name 
+-->
+
+<!-- 
+ngClass : it allows us to dynamically add or remove CSS classes
+[ngClass]="{key: value/method}"
+  key : CSS class name
+  values : conditions determining whether this calss should be attached or not
+ -->
+
