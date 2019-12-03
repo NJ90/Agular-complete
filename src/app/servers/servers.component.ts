@@ -26,7 +26,7 @@ export class ServersComponent implements OnInit {
   ngOnInit() {
   }
 
-  onCreateServer(){//typcally ytrigger에 on-붙인다
+  onCreateServer(){//typcally trigger에 on-붙인다
     this.serverCreationStatus = 'server was created Name is:' + this.serverName
   }
 
