@@ -1,0 +1,49 @@
+<!-- two-way binding : <label></label> -->
+<label>Server Name</label>
+<!-- <input 
+type="text" 
+class="form-control"
+(input)="onUpdateServerName($event)"> data binding -->
+<!-- 
+    $event : super important!!!
+        event binding 할 때 사용
+        data which emmited with "onCreateServer()" 
+
+        input -> make some data (the information of the event) 
+              -> also ship the data
+        *** ($event) ==>> capture that data (passed as an argument)
+ -->
+
+
+ <input 
+ type="text" 
+ class="form-control"
+ [(ngModel)]="serverName">
+ <!-- two-way binding [(ngModel)] : 
+    앵귤러에서 제공하는 directive ng~, 이를 사용하기 위해서는 
+    app.module.ts에서 
+    * import { FormsModule } from '@angular/forms'
+    * imports:[
+    FormsModule
+    ] 
+
+    선언한 뒤 사용할 수 있다.
+-->
+
+ <p>{{serverName}}</p>
+
+<button 
+class="btn btn-primary" 
+[disabled]="!allowNewServer"  
+(click)="onCreateServer()"> <!--event binding (click)="methodname() which is on .ts file"-->
+Add server </button>
+<p [innerText]="allowNewServer"></p>
+<!-- 
+allowNewServer를 ts에 선언한 후 사용
+* property binding ([innerText]="allowNewServer") : change some property HTML elements, directives...
+* string diplation (<p>{{allowNewServer}}</p>) : print some text to templete, outputting data
+-->
+
+<p>{{serverCreationStatus}}</p>
+<app-server></app-server>
+<app-server></app-server>
