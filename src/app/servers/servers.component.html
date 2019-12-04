@@ -57,5 +57,5 @@ allowNewServer를 ts에 선언한 후 사용
 </ng-template> -->
 
 
-<app-server></app-server>
-<app-server></app-server>
+<app-server *ngFor="let server of servers"></app-server>
+<!-- let 'any name' of 'property in the ts file' -->

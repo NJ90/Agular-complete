@@ -17,6 +17,7 @@ export class ServersComponent implements OnInit {
   serverCreationStatus = "no server was created";
   serverName='Test Server';
   serverCreated = false;
+  servers = ['Test1' , 'Test2'] //*ngFor -  array생성
 
   constructor() { 
     setTimeout(() => { //same meaning with "function(){}"
@@ -29,6 +30,7 @@ export class ServersComponent implements OnInit {
 
   onCreateServer(){//typically trigger에 on-붙인다
     this.serverCreated = true,
+    this.servers.push(this.serverName),
     this.serverCreationStatus = 'server was created Name is:' + this.serverName
   }
 
